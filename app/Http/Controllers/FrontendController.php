@@ -10,7 +10,6 @@ use App\foto_produk;
 use App\checkout;
 use App\blog;
 use App\cart;
-use search;
 
 class FrontendController extends Controller
 {
@@ -52,9 +51,9 @@ class FrontendController extends Controller
 
     public function index()
     {
+        $produk = produk::orderBy('created_at','desc')->paginate();;
         $kategori = kategori::all();
         $merk = merk::all();
-        $produk = produk::all();
         $blog = blog::all();
         $foto = foto_produk::all();
         return view('Frontend.index',compact('kategori','merk','produk','blog','foto'));
@@ -75,16 +74,16 @@ class FrontendController extends Controller
         // $categori = kategori::whereSlug($slug)->first();
         return view('Frontend.allproduk',compact('produk','kategori'));
     }
-    public function cart()
-    {        
-        $produk = produk::orderBy('created_at')->paginate(5);;
-        $kategori = kategori::all();
-        $merk = merk::all();
-        $blog = blog::all();
-        $foto = foto_produk::all();
-        $cart = cart::all();
-        return view('Frontend.cart',compact('produk','kategori','merk','blog','foto_produk','cart'));
-    }
+    // public function cart()
+    // {        
+    //     $produk = produk::orderBy('created_at')->paginate(5);;
+    //     $kategori = kategori::all();
+    //     $merk = merk::all();
+    //     $blog = blog::all();
+    //     $foto = foto_produk::all();
+    //     $cart = cart::all();
+    //     return view('Frontend.cart',compact('produk','kategori','merk','blog','foto_produk','cart'));
+    // }
 
     public function search( Request $req){
         if($req->search == ""){
@@ -93,7 +92,7 @@ class FrontendController extends Controller
             return view ('Frontend.search',compact('produk','cart'));
         }else{
             $cart = cart::all();
-            $produk = produk::where('nama_produk', 'LIKE', '%' . $req->search . '%')->paginate(2);
+            $produk = produk::where('nama_produk', 'LIKE', '%' . $req->search . '%')->paginate(9);
             $produk->appends($req->only('search'));
             $blog = blog::all();
             $merk = merk::all();

@@ -9,8 +9,8 @@
                     <span class="login100-form-title p-b-70">
                         Welcome
                     </span>
-                    <span class="login100-form-avatar">
-                        <img src="{{ asset('assets/login/images/avatar-01.jpg') }}" alt="AVATAR">
+                    <span class="">
+                        <img src="{{ asset('assets/img/garage20.png') }}" style="width: 330px; height: 190px;">
                     </span>
 
                     <div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Enter username">

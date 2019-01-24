@@ -38,11 +38,11 @@
                                 <div class="product-info">
                                     <h2>{{$produk->nama_produk}}</h2>
                                     <div class="price-box pt-20">
-                                        <span class="new-price new-price-2">Rp. {{ number_format($produk->harga) }}</span>
+                                        <span class="new-price new-price-2">Rp. {{ number_format($produk->harga) }}<br><br> <h6>Stock : {{ $produk->stock }}</h6></span>
                                     </div>
                                     <div class="product-desc">
                                         <p>
-                                            <span>100% cotton double printed dress. Black and white striped top and orange high waisted skater skirt bottom. Lorem ipsum dolor sit amet, consectetur adipisicing elit. quibusdam corporis, earum facilis et nostrum dolorum accusamus similique eveniet quia pariatur.
+                                            <span>{!!($produk->deskripsi)!!}
                                             </span>
                                         </p>
                                     </div>
@@ -59,7 +59,7 @@
                                                     <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
                                                 </div>
                                             </div>
-                                            <button class="add-to-cart" id="aksi" type="submit">Add to cart</button>
+                                            <a class="add-to-cart" href="{{url('add-cart',$data->produk->id)}}" type="submit">Add to cart</a>
                                         </form>
                                     </div>
                                 </div>
@@ -68,6 +68,7 @@
                     </div>
                 </div>
             </div>
+            {{-- <script src="{{ asset('js/cart.js') }}"> --}}
             @endsection
             @section('js')
 <script>

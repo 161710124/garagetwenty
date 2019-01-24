@@ -68,6 +68,7 @@ class ProdukController extends Controller
         $produk->harga = $request->harga;
         $produk->stock = $request->stock;
         $produk->kode_barang = $request->kode_barang;
+        $produk->deskripsi = $request->deskripsi;
         $produk->slug = str_slug($request->nama_produk,'-');
         $produk->kategori_id = $request->kategori_id;
         $produk->merk_id = $request->merk_id;
@@ -116,6 +117,7 @@ class ProdukController extends Controller
         'harga' => 'required',
         'stock'=>'required',
         'kode_barang' => 'required',
+        'deskripsi' => 'required',
         'kategori_id' => 'required',
         'merk_id' => 'required'
         ]);
@@ -124,6 +126,7 @@ class ProdukController extends Controller
         $produk->harga = $request->harga;
         $produk->stock = $request->stock;
         $produk->kode_barang = $request->kode_barang;
+        $produk->deskripsi = $request->deskripsi;
         $produk->kategori_id = $request->kategori_id;
         $produk->merk_id = $request->merk_id;
         $produk->save();

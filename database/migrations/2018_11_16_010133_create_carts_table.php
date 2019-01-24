@@ -21,7 +21,6 @@ class CreateCartsTable extends Migration
             $table->foreign('produk_id')->references('id')->on('produks')->onDelete('CASCADE');
             $table->integer('total_harga')->nullable();
             $table->integer('jumlah');
-            $table->integer('quantity');
             $table->timestamps();
         });
     }

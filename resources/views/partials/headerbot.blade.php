@@ -7,17 +7,12 @@
                                     <nav>
                                         <ul>
                                             <li class="dropdown-holder"><a href="{{ route('frontend') }}">Home</a>
-                                                <ul class="hb-dropdown">
-                                                    <li class="active"><a href="#">Home One</a></li>
-                                                    <li><a href="#">Home Two</a></li>
-                                                    <li><a href="#">Home Three</a></li>
-                                                    <li><a href="#">Home Four</a></li>
-                                                </ul>
+                                                
                                             </li>
                                              <li class="megamenu-static-holder"><a href="#">KATEGORI</a>
                                                 <ul class="megamenu hb-megamenu">
                                                     @foreach($kategori as $data)
-                                                    <li><a href="/indexproduk/kategori/{{$data->slug}}">{{$data->nama_kategori}}</a>
+                                                    <li><h6><a href="/indexproduk/kategori/{{$data->slug}}">{{$data->nama_kategori}}</a></h6>
                                                     </li>
                                                     @endforeach
                                                 </ul>

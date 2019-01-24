@@ -8,17 +8,17 @@
         <div class="sidebar-wrapper">
             <div class="logo">
                 <a href="#">
-                    <img src="{{asset ('assets/Admin/assets/img/garage20.png') }}" style="width: 230px;height: 50px;" />
+                    <img src="{{asset ('/assets/img/garage.png') }}" style="width: 230px;height: 50px;" />
                 </a>
             </div>
 
             <ul class="nav">
-                <li class="active">
+                <!-- <li class="active">
                     <a href="dashboard.html">
                         <i class="ti-panel"></i>
                         <p>Dashboard</p>
                     </a>
-                </li>
+                </li> -->
 
                 <li><a href="{{route('kategorii.index')}}">K A T E G O R I</a></li>
 
@@ -30,10 +30,10 @@
 
                 <li><a href="{{route('blog.index')}}">B L O G</a></li>
 
-                <li><a href="{{route('chart.index')}}">C H A R T</a></li>
+                <!-- <li><a href="{{route('chart.index')}}">C H A R T</a></li>
 
                 <li><a href="{{route('check.index')}}">C H E C K O U T</a></li>
-
+ -->
                 <!-- <li>
                     <a href="icons.html">
                         <i class="ti-pencil-alt2"></i>

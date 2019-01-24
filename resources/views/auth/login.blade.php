@@ -10,7 +10,7 @@
                         
                     </span>
                     <span class="">
-                        <img src="{{ asset('assets/img/garage20.png') }}" style="width: 330px; height: 190px;">
+                        <img src="{{ asset('assets/img/garage.png') }}" style="width: 330px; height: 190px;">
                     </span>
 
                     <div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Enter username">

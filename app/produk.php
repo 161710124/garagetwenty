@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class produk extends Model
 {
     protected $table = 'produks';
-    protected $fillable =array('nama_produk','harga','stock','slug','kode_barang','kategori_id',
+    protected $fillable =array('nama_produk','harga','stock','slug','kode_barang','deskripsi','kategori_id',
     	'merk_id');
 
     public function fotoproduk(){

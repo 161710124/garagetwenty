@@ -4,8 +4,8 @@
                 <div class="container">
                     <div class="breadcrumb-content">
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li class="active">Shop Left Sidebar</li>
+                            <!-- <li><a href="index.html">Home</a></li>
+                            <li class="active">Shop Left Sidebar</li> -->
                         </ul>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                                                         </div>
                                                         <div class="product_desc">
                                                             <div class="product_desc_info">
-                                                                <h4><a class="product_name" href="single-product.html">{{$data->nama_produk}}</a></h4>
+                                                                <h4><a class="product_name" href="/detailproduk/{{$data->slug}}">{!! str_limit($data->nama_produk,29)!!}</a></h4>
                                                                 <div class="price-box">
                                                                     <span class="new-price">Rp. {{ number_format($data->harga) }}</span>
                                                                 </div>

@@ -53,6 +53,16 @@
                         @endif
 			  		</div>
 
+			  		<div class="form-group {{ $errors->has('deskripsi') ? ' has-error' : '' }}">
+			  			<label class="control-label">Deskripsi</label>	
+			  			<textarea type="text" name="deskripsi" class="form-control"  required>{{ $produk->deskripsi }}</textarea>
+			  			@if ($errors->has('deskripsi'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('deskripsi') }}</strong>
+                            </span>
+                        @endif
+			  		</div>
+
 			  		<div class="form-group {{ $errors->has('kategori_id') ? ' has-error' : '' }}">
 			  			<label class="control-label">kategori_id</label>	
 			  			<select type="text" name="kategori_id" class="form-control"  value="{{ $produk->kategori_id}}"  required>

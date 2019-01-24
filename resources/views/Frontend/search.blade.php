@@ -9,29 +9,46 @@
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="list" role="tabpanel">
                     @if (count($produk) > 0)
-                    @foreach ($produk as $item)
-                    <div class="single_product list_item">
-                        <div class="row align-items-center">
-                            <div class="col-lg-3 col-md-5">
-                                @foreach($item->foto_produk as $data_foto)
-                                @if ($loop->first)
-                                <div class="product_thumb">
-                                    <a href="/detailproduk/{{$data->slug}}"><img src="{{ asset('img/'.$item->foto) }}" alt=""></a>
+                    <div class="shop-products-wrapper">
+                                <div class="tab-content">
+                                    <div id="grid-view" class="tab-pane fade active show" role="tabpanel">
+                                        <div class="product-area shop-product-area">
+                                            <div class="row">
+                                                @foreach($produk as $data)
+                                                <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
+                                                    <!-- single-product-wrap start -->
+                                                    <div class="single-product-wrap">
+                                                        <div class="product-image">
+                                                        @foreach($data->fotoproduk()->get() as $datas)
+                                                        @if($loop->first)
+                                                            <a href="/detailproduk/{{$data->slug}}">
+                                                                <img src="{{ asset('img/'.$datas->foto) }}" alt="Li's Product Image" style="width: 270px; height: 181px;">
+                                                            </a>
+                                                            @endif
+                                                            @endforeach
+                                                        </div>
+                                                        <div class="product_desc">
+                                                            <div class="product_desc_info">
+                                                                <h4><a class="product_name" href="/detailproduk/{{$data->slug}}">{{$data->nama_produk}}</a></h4>
+                                                                <div class="price-box">
+                                                                    <span class="new-price">Rp. {{ number_format($data->harga) }}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="add-actions">
+                                                                <ul class="add-actions-link">
+                                                                    <li class="add-cart active"><a href="/detailproduk/{{$data->slug}}">LIHAT DETAIL <i class="fa fa-eye"></i></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- single-product-wrap end -->
+                                            </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    
                                 </div>
-                                @endif                                
-                                @endforeach 
-                            </div>
-                            <div class="col-lg-9 col-md-7">
-                                <div class="product_content">
-                                    <h3><a href="product-details.html">{{ $item->nama_produk }}</a></h3>
-                                    <div class="product_price">
-                                        <span class="current_price">Rp. {{ number_format($item->harga) }}</span>
-                                    </div>                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach                            
+                            </div>                         
                     @else
                     <br><br> 
                     <h3>

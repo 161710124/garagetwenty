@@ -1,22 +1,16 @@
 @extends('layouts.admin')
 @section('content')
+<section class="card">
 <div class="row">
-	<div class="container">
-		<div class="col-md-12">
-			<div class="panel panel-primary">
-			<div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Tambah product</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>			
-			  <div class="panel-body">
+  <div class="container">
+    <div class="col-md-12">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Tambah Data Produk 
+          <div class="panel-title pull-right"><a href="{{ url()->previous() }}">Kembali</a>
+          </div>
+        </div>
+        <br>
+        <div class="panel-body">
 			  	<form action="{{ route('produks.store') }}" method="post"  enctype="multipart/form-data" >
 					  {{ csrf_field() }}
                     
@@ -57,6 +51,17 @@
                             </span>
                         @endif
                       </div>
+
+                      <div class="form-group {{ $errors->has('deskripsi') ? ' has-error' : '' }}">
+              <label class="control-label">Deskripsi</label>  
+              <textarea type="text" name="deskripsi" class="form-control"  required>
+              @if ($errors->has('deskripsi'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('deskripsi') }}</strong>
+                            </span>
+                        @endif
+                    </textarea>
+            </div>
                       
                       <div class="form-group {{ $errors->has('kategori_id') ? ' has-error' : '' }}">
 			  			<label class="control-label">kategori</label>	
@@ -87,14 +92,14 @@
                         @endif
 			  		</div>
 			  		<div class="form-group">
-			  			<button type="submit" class="btn btn-primary">Tambah</button>
-                    <a href="{{ url()->previous() }}" >kembali</a>
-                    </div>
-			  	</form>
-			  </div>
-			</div>	
-		</div>
-	</div>
+              <button type="submit" class="btn btn-primary">Tambah</button>
+            </div>
+          </form>
+        </div>
+      </div>  
+    </div>
+  </div>
 </div>
+</section>
 @endsection
 

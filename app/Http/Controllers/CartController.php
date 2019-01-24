@@ -38,22 +38,22 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'jumlah' => 'required',
-            'produk_id' => 'required',
-            'user_id' => 'required'
-        ]);
-        $cart = new cart;
-        $produk = produk::find($request->produk_id);
-        $cart->jumlah = $request->jumlah;
-        $cart->total_harga = $request->jumlah * $produk->harga;
-        $cart->produk_id = $request->produk_id;
-        $cart->user_id = $request->user_id;
+        // $this->validate($request, [
+        //     'jumlah' => 'required',
+        //     'produk_id' => 'required',
+        //     'user_id' => 'required'
+        // ]);
+        // $cart = new cart;
+        // $produk = produk::find($request->produk_id);
+        // $cart->jumlah = $request->jumlah;
+        // $cart->total_harga = $request->jumlah * $produk->harga;
+        // $cart->produk_id = $request->produk_id;
+        // $cart->user_id = $request->user_id;
 
-        $produk->stock = $produk->stock - $request->jumlah;
-        $produk->save();
-        $cart->save();
-        return response()->json(['success'=>true]);
+        // $produk->stock = $produk->stock - $request->jumlah;
+        // $produk->save();
+        // $cart->save();
+        // return response()->json(['success'=>true]);
     }
 
     /**

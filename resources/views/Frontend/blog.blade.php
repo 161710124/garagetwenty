@@ -5,7 +5,7 @@
                                 <div class="col-lg-12">
                                     <div class="li-blog-single-item pb-30">
                                         <div class="li-blog-banner">
-                                            <a href="blog-details.html"><img class="img-full" src="{{ asset('img/'.$blog->foto) }}" alt=""></a>
+                                            <a href="blog-details.html"><img class="img-full" src="{{ asset('img/'.$blog->foto) }}" alt="" style="width: 520px; height: 379px;"></a>
                                         </div>
                                         <div class="li-blog-content">
                                             <div class="li-blog-details">

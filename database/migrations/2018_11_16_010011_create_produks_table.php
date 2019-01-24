@@ -20,6 +20,7 @@ class CreateProduksTable extends Migration
             $table->integer('stock');
             $table->string('slug');
             $table->integer('kode_barang');
+            $table->text('deskripsi');
             $table->unsignedInteger('kategori_id');
             $table->foreign('kategori_id')->references('id')->on('kategoris')->onDelete('CASCADE');
             $table->unsignedInteger('merk_id');
