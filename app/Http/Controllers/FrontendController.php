@@ -51,7 +51,7 @@ class FrontendController extends Controller
 
     public function index()
     {
-        $produk = produk::orderBy('created_at','desc')->paginate();;
+        $produk = produk::orderBy('created_at','desc')->paginate(5);;
         $kategori = kategori::all();
         $merk = merk::all();
         $blog = blog::all();

@@ -46,6 +46,7 @@
                                             </span>
                                         </p>
                                     </div>
+                                    @role('member')
                                     <div class="single-add-to-cart">
                                         <form id="#formCart" method="POST" class="cart-quantity" enctype="multipart/form-data">
                                             {{ csrf_field() }} {{ method_field('POST') }}
@@ -62,6 +63,7 @@
                                             <a class="add-to-cart" href="{{url('add-cart',$data->produk->id)}}" type="submit">Add to cart</a>
                                         </form>
                                     </div>
+                                    @endrole
                                 </div>
                             </div>
                         </div> 

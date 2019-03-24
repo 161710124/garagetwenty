@@ -62,7 +62,7 @@
                                                     </li>
                                                 </ul>
                                                 <p class="minicart-total">SUBTOTAL: <span>£80.00</span></p>
-                                                
+                                                @role('member')
                                                 <div class="minicart-button">
                                                     <a href="{{url('cart', Auth::user()->id)}}" class="li-button li-button-fullwidth li-button-dark">
                                                         <span>View Full Cart</span>
@@ -72,6 +72,7 @@
                                                     </a>
                                                 </div>
                                             </div>
+                                            @endrole
                                                 @if(Route::has('login'))
                                                 @auth
                                                 <li>

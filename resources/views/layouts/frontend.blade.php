@@ -63,6 +63,7 @@
             @yield('content')
             <!-- Li's Trendding Products Area End Here -->
             <!-- Begin Footer Area -->
+            @include('partials.chat')
             @include('partials.foot')
             <!-- Footer Area End Here -->
             <!-- Begin Quick View | Modal Area -->

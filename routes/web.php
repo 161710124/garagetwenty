@@ -26,8 +26,8 @@ Route::resource('merks', 'MerkController');
 Route::resource('produks', 'ProdukController');
 Route::resource('fp', 'FotoProdukController');
 Route::resource('blog','BlogController');
-Route::resource('chart','CartController');
-Route::resource('check','CheckoutController');
+// Route::resource('chart','CartController');
+// Route::resource('check','CheckoutController');
 });
 
 
