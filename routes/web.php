@@ -27,7 +27,7 @@ Route::resource('produks', 'ProdukController');
 Route::resource('fp', 'FotoProdukController');
 Route::resource('blog','BlogController');
 // Route::resource('chart','CartController');
-// Route::resource('check','CheckoutController');
+Route::resource('cek','CheckoutController');
 });
 
 
@@ -82,7 +82,68 @@ Route::group(['middleware'=>'auth'],function(){
 
         return redirect()->back();
     });
+
+Route::get('check/{user_id}', function ($user_id) {
+        $checkout = \App\checkout::where('user_id', $user_id)->get();
+        $kategori = \App\kategori::all();
+        $cart = \App\cart::all();
+        return view('Frontend.checkout', compact('checkout','kategori','cart'));
+    });
+
+Route::post('checkout/{user_id}',function( \Illuminate\Http\Request $request, $user_id){
+        $request->validate([
+            'nama' => 'required|',
+            'email' => 'required|',
+            'no_telp' => 'required|',
+            'alamat' => 'required|',
+            'kota' => 'required|',
+            'provinsi' => 'required|',
+            'kodepos' => 'required|'
+        ]);
+        // dd(json_decode($request->chart));
+        foreach(json_decode($request->chart) as $data){
+
+            $custom = new \App\checkout;
+            $custom->nama = $request->nama;
+            $custom->email = $request->email;
+            $custom->no_telp = $request->no_telp;
+            $custom->alamat = $request->alamat;
+            $custom->kota = $request->kota;
+            $custom->provinsi = $request->provinsi;
+            $custom->kodepos = $request->kodepos;
+            $custom->jumlah = $data->jumlah;
+            $custom->catatan = $request->catatan;
+            $custom->produk_id = $data->produk_id;
+            $custom->user_id = \Auth::user()->id;
+
+           $custom->save(); 
+        }
+
+        $del = \App\cart::where('user_id', $user_id)->delete();
+
+        return redirect()->route('home');
+    });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

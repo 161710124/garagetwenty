@@ -52,14 +52,14 @@
                                             {{ csrf_field() }} {{ method_field('POST') }}
                                             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                                             <input type="hidden" name="produk_id" value="{{ $produk->id }}">
-                                            <div class="quantity">
+                                            <!-- <div class="quantity">
                                                 <label>jumlah</label>
                                                 <div class="cart-plus-minus">
                                                     <input min="1" max="{{ $produk->stock }}" name="jumlah" class="cart-plus-minus-box" type="number" required>
                                                     <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
                                                     <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <a class="add-to-cart" href="{{url('add-cart',$data->produk->id)}}" type="submit">Add to cart</a>
                                         </form>
                                     </div>

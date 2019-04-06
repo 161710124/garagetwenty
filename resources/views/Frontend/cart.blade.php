@@ -66,10 +66,10 @@
                                         <div class="cart-page-total">
                                             <h2>Cart totals</h2>
                                             <ul>
-                                                <li>Subtotal <span>$130.00</span></li>
-                                                <li>Total <span>$130.00</span></li>
+                                                <li>Subtotal <span>Rp.{{number_format($total_all,2,',','.')}}</span></li>
+                                                <li>Total <span>Rp.{{number_format($total_all,2,',','.')}}</span></li>
                                             </ul>
-                                            <a href="#">Proceed to checkout</a>
+                                            <a href="{{url('check', Auth::user()->id)}}">Proceed to checkout</a>
                                         </div>
                                     </div>
                                 </div>

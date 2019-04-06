@@ -6,8 +6,6 @@
 		<div class="col-md-12">
 			<div class="panel panel-primary">
 			  <div class="panel-heading">Data CheckOut
-			  	<div class="panel-title pull-right"><a href="{{ route('check.create') }}">Tambah</a>
-			  	</div>
 			  </div>
 			  <div class="panel-body">
 			  	<div class="table-responsive">
@@ -15,11 +13,16 @@
 				  	<thead>
 			  		<tr>
 			  		  <th>No</th>
-					  <th>Nama User</th>
-					  <th>ID Cart</th>
+					  <th>Produk</th>
+					  <th>Jumlah</th>
+					  <th>Nama</th>
+					  <th>Email</th>
+					  <th>No Telepon</th>
 					  <th>Alamat</th>
-					  <th>No Telp</th>
-					  <th colspan="2">Option</th>
+					  <th>Kota</th>
+					  <th>Provinsi</th>
+					  <th>Kode Pos</th>
+					  <th>Catatan</th>
 			  		</tr>
 				  	</thead>
 				  	<tbody>
@@ -27,20 +30,17 @@
 				  		@foreach($cek as $data)
 				  	  <tr>
 				    	<td>{{ $no++ }}</td>
-				    	<td>{{ $data->User->name }}</td>
-				    	<td>{{ $data->cart->id }}</td>
-				    	<td>{{ $data->alamat }}</td>
+				    	<td>{{ $data->produk_id }}</td>
+				    	<td>{{ $data->jumlah }}</td>
+				    	<td>{{ $data->nama }}</td>
+				    	<td>{{ $data->email }}</td>
 				    	<td>{{ $data->no_telp }}</td>
-				    	<td>
-						<a class="btn btn-warning" href="{{ route('check.edit',$data->id) }}">Edit</a>
-						</td>
+				    	<td>{{ $data->alamat }}</td>
+				    	<td>{{ $data->kota }}</td>
+				    	<td>{{ $data->provinsi }}</td>
+				    	<td>{{ $data->kodepos }}</td>
+				    	<td>{{ $data->catatan }}</td>
 						<td>
-							<form method="post" action="{{ route('check.destroy',$data->id) }}">
-								<input name="_token" type="hidden" value="{{ csrf_token() }}">
-								<input type="hidden" name="_method" value="DELETE">
-
-								<button type="submit" class="btn btn-danger">Hapus</button>
-							</form>
 						</td>
 				      </tr>
 				      @endforeach	

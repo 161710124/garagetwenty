@@ -29,6 +29,8 @@
                 <li><a href="{{route('fp.index')}}">F O T O P R O D U K</a></li>
 
                 <li><a href="{{route('blog.index')}}">B L O G</a></li>
+
+                <li><a href="{{route('cek.index')}}">C H E C K O U T</a></li>
                 <!-- <li>
                     <a href="icons.html">
                         <i class="ti-pencil-alt2"></i>

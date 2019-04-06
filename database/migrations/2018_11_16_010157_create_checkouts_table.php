@@ -17,10 +17,17 @@ class CreateCheckoutsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
-            $table->unsignedInteger('cart_id');
-            $table->foreign('cart_id')->references('id')->on('carts')->onDelete('CASCADE');
-            $table->text('alamat');
+            $table->unsignedInteger('produk_id');
+            $table->foreign('produk_id')->references('id')->on('produks')->onDelete('CASCADE');
+            $table->string('nama');
+            $table->string('email');
             $table->string('no_telp');
+            $table->text('alamat');
+            $table->string('kota');
+            $table->string('provinsi');
+            $table->integer('kodepos');
+            $table->integer('jumlah');
+            $table->string('catatan');
             $table->timestamps();
         });
     }
