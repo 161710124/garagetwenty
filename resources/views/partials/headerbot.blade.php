@@ -9,11 +9,18 @@
                                             <li class="dropdown-holder"><a href="{{ route('frontend') }}">Home</a>
                                                 
                                             </li>
-                                             <li class="megamenu-static-holder"><a href="#">KATEGORI</a>
+                                             <!-- <li class="megamenu-static-holder"><a href="#">KATEGORI</a>
                                                 <ul class="megamenu hb-megamenu">
                                                     @foreach($kategori as $data)
                                                     <li><h6><a href="/indexproduk/kategori/{{$data->slug}}">{{$data->nama_kategori}}</a></h6>
                                                     </li>
+                                                    @endforeach
+                                                </ul>
+                                            </li> -->
+                                            <li class="dropdown-holder"><a href="#">Kategori</a>
+                                                <ul class="hb-dropdown">
+                                                    @foreach($kategori as $data)
+                                                    <li class=""><a href="/indexproduk/kategori/{{$data->slug}}">{{$data->nama_kategori}}</a></li>
                                                     @endforeach
                                                 </ul>
                                             </li>

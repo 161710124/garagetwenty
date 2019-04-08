@@ -23,22 +23,25 @@ class FrontendController extends Controller
         {
             $blog = blog::findOrFail($id);
             $kategori = kategori::all();
-            return view('Frontend.blog',compact('kategori','blog'));
+            $cart = cart::all();
+            return view('Frontend.blog',compact('kategori','blog','cart'));
         }
 
         public function detailproduk($slug)
         {
             $produk = produk::whereSlug($slug)->first();
             $kategori = kategori::all();
+            $cart = cart::all();
             // $foto = foto_produk::all();
-            return view('Frontend.detailproduk',compact('produk','kategori'))->with('produk',$produk);
+            return view('Frontend.detailproduk',compact('produk','kategori','cart'))->with('produk',$produk);
         }
 
     public function indexblog()
         {
             $kategori = kategori::all();
             $indexblog = blog::all();
-            return view('Frontend.index-blog',compact('kategori','indexblog'));
+            $cart = cart::all();
+            return view('Frontend.index-blog',compact('kategori','indexblog','cart'));
         }
 
         public function indexproduk()
@@ -46,7 +49,8 @@ class FrontendController extends Controller
             $kategori = kategori::all();
             $foto = foto_produk::all();
             $produk = produk::all();
-            return view('Frontend.allproduk',compact('kategori','foto','produk'));
+            $cart = cart::all();
+            return view('Frontend.allproduk',compact('kategori','foto','produk','cart'));
         }
 
     public function index()
@@ -56,7 +60,8 @@ class FrontendController extends Controller
         $merk = merk::all();
         $blog = blog::all();
         $foto = foto_produk::all();
-        return view('Frontend.index',compact('kategori','merk','produk','blog','foto'));
+        $cart = cart::all();
+        return view('Frontend.index',compact('kategori','merk','produk','blog','foto','cart'));
     }
 
     // public function kategoriproduk($slug)
@@ -71,8 +76,9 @@ class FrontendController extends Controller
         // $kategori = kategori::all();
         $produk = $kategori->produk()->latest()->paginate(5);
         $kategori = Kategori::all();
+        $cart = cart::all();
         // $categori = kategori::whereSlug($slug)->first();
-        return view('Frontend.allproduk',compact('produk','kategori'));
+        return view('Frontend.allproduk',compact('produk','kategori','cart'));
     }
     // public function cart()
     // {        

@@ -208,10 +208,7 @@
                                                 </span></td>
                                             </tr>
                                             @endforeach
-                                              <!-- <tr class="cart_item">
-                                              <td class="cart-product-name"> {{$data->produk->nama_produk}}<strong class="product-quantity"> × {{$data->jumlah}}</strong></td>
-                                              <td class="cart-product-total"><span class="amount">Rp. {{ number_format($data->jumlah * $data->produk->harga) }}</span></td>  
-                                            </tr> -->
+                                              
                                         </tbody>
                                         <tfoot>
                                             <tr class="order-total">
@@ -267,9 +264,15 @@
                                             </div>
                                           </div>
                                         </div> -->
-                                        <div>
+                                        <!-- <div>
                                             <button class="order-button-payment" value="Place order" type="submit"></button>
-                                        </div>
+                                        </div> -->
+                                        <div class="footer-newsletter">
+                                        <div id="mc_embed_signup_scroll">
+                                              <div id="mc-form" class="mc-form subscribe-form form-group" >
+                                                <button  class="btn" type="submit">Checkout</button>
+                                              </div>
+                                           </div>
                                     </form>
                                 </div>
                                 </div>

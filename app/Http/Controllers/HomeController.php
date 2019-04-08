@@ -46,6 +46,7 @@ class HomeController extends Controller
         $produk = produk::all();
         $blog = blog::all();
         $foto = foto_produk::all();
-        return view('frontend.index',compact('kategori','merk','produk','blog','foto'));
+        $cart = cart::all();
+        return view('frontend.index',compact('kategori','merk','produk','blog','foto','cart'));
     }
 }

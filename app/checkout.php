@@ -13,7 +13,7 @@ class checkout extends Model
     	return $this->belongsTo('App\User','user_id');
 	}
 
-	public function cart(){
-    	return $this->belongsTo('App\cart','cart_id');
+	public function produk(){
+    	return $this->belongsTo('App\produk','produk_id');
 	}
 }

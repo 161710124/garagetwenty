@@ -31,7 +31,7 @@
                             <img src="{{ asset('img/'.$data->foto) }}" style="max-height:150px;max-width:150px;margin-top:7px;"/> </td>
 				    	
 				    	<td>{{ $data->judul }}</td>
-				    	<td>{!! str_limit($data->artikel,50)!!}</td>
+				    	<td>{!! $data->artikel !!}</td>
 				    	<td>
 						<a class="btn btn-warning" href="{{ route('blog.edit',$data->id) }}">Edit</a>
 						</td>
